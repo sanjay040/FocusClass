@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Focus classes</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="lib/angular-route.js"></script>
+
+	<script type="text/javascript" src="routing.js"></script>
+
+	<!-- all controllers -->
+	<script type="text/javascript" src="components/home/homeController.js"></script>
+	<script type="text/javascript" src="components/about/aboutController.js"></script>
+	<script type="text/javascript" src="components/contact/contactController.js"></script>
+
+
+	<!-- all services -->
+	<script type="text/javascript" src="components/home/homeService.js"></script>
+	<script type="text/javascript" src="components/about/aboutService.js"></script>
+	<script type="text/javascript" src="components/contact/contactService.js"></script>
+</head>
+<body ng-app="focusClass">
+
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Focus Classes</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="currentPath === '/' ? 'active' : ''"><a href="#">Home</a></li>
+            <li ng-class="currentPath === '/about' ? 'active' : ''"><a href="#!about">About</a></li>
+            <li ng-class="currentPath === '/contact' ? 'active' : ''"><a href="#!contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div ng-view class="content"></div>
+
+
+  	<div class="footer">
+	  <p>Footer</p>
+	</div>
+
+</body>
+</html>
